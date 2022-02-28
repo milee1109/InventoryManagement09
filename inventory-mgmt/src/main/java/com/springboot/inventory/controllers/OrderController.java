@@ -53,6 +53,8 @@ public class OrderController {
 	public String saveOrder(@ModelAttribute Orders order,RedirectAttributes redirAttrs,Model model)
 	{
 		Item item=itemRepository.getById(order.getItem_id());
+		System.out.println("item :"+item);
+		System.out.println("order :"+order);
 		Integer stock=item.getStock();
 		Integer quantity=order.getQuantity();
 		if(quantity<=stock)
